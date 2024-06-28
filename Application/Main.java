@@ -8,10 +8,14 @@ public class Main {
         ArrayList<Carro> carros = new ArrayList<>();
         for (int i = 0; i < 1; i++) {
             Carro carro = new Carro();
-            carro.entradaDados();
-            carro.acelerar();
-            carro.acelerar();
-            carros.add(carro);
+            try { //Recebe exceção e trata
+                carro.entradaDados();
+                carro.acelerar();
+                carro.acelerar();
+                carros.add(carro);
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            }
         }
         for (Carro carro : carros) {
             carro.imprimir();

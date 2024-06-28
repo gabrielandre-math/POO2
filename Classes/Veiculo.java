@@ -70,19 +70,22 @@ public abstract class Veiculo {
     }
 
     //Método adicional
-    public String verificarCampo(String campo) {
+    //Joga exceção
+    public String verificarCampo(String campo) throws IllegalArgumentException {
         if (campo == null || campo.trim().isEmpty()) {
             throw new IllegalArgumentException("O campo não pode ser vazio!");
         }
         return campo;
     }
-    public int verificarCampoInteiro(int campo) {
+    //Joga exceção
+    public int verificarCampoInteiro(int campo) throws IllegalArgumentException {
         if (campo < 0) {
             throw new IllegalArgumentException("O campo não pode ser negativo!");
         }
         return campo;
     }
-    public double verificarCampoDouble(double campo) {
+    //Joga exceção
+    public double verificarCampoDouble(double campo) throws IllegalArgumentException {
         if (campo < 0) {
             throw new IllegalArgumentException("O campo não pode ser negativo!");
         }
