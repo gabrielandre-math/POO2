@@ -3,10 +3,9 @@ package Classes;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Carro extends Veiculo {
+public class Carro extends Veiculo implements ComportamentoVeiculo {
     private int numeroPassageiros;
     private int volumeMala;
-
 
     //Construtores
     public Carro() {

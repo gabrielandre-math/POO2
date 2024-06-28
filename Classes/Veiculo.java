@@ -1,25 +1,25 @@
 package Classes;
 import java.util.Scanner;
 
-public abstract class Veiculo implements ComportamentoVeiculo {
+public abstract class Veiculo {
     private final int IdadeMinimaMotorista = 18;
     private String marca;
     private String placa;
     private double preco;
-    public Motor motor;
+    public Motor motor = new Motor();
 
     //Construtores
     public Veiculo() {}
-    public Veiculo(String marca, String placa, double preco) {
-        this.marca = marca;
-        this.placa = placa;
-        this.preco = preco;
-    }
     public Veiculo(String marca, String placa, double preco, Motor motor) {
         this.marca = marca;
         this.placa = placa;
         this.preco = preco;
         this.motor = motor;
+    }
+    public Veiculo(String marca, String placa, double preco) {
+        this.marca = marca;
+        this.placa = placa;
+        this.preco = preco;
     }
     public Veiculo(String marca, String placa, Motor motor) {
         this.marca = marca;
@@ -96,8 +96,6 @@ public abstract class Veiculo implements ComportamentoVeiculo {
         setPlaca(sc.nextLine());
         System.out.println("Digite o preço: ");
         setPreco(Double.parseDouble(sc.nextLine()));
-
-        motor = new Motor();
 
         System.out.println("Digite a potência do motor: ");
         motor.setPotencia(Integer.parseInt(sc.nextLine()));
